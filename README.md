@@ -77,3 +77,28 @@ df.loc[df['neighbourhood_group'] != 'Manhattan', 'neighbourhood'] = 'Mismatch'
 df.head()
 ```
 
+#### Aplicando IF com strings e lambda.
+```bash
+df['neighbourhood'] = df['neighbourhood_group'].apply(lambda x: 'Match' if x == 'Manhattan' else 'Mismatch')
+df.head()
+```
+
+#### Aplicando IF com OR.
+```bash
+df.loc[(df['neighbourhood_group'] == 'Manhattan') | (df['neighbourhood_group'] == 'Brooklyn'), 'neighbourhood'] = 'Match' 
+df.loc[(df['neighbourhood_group'] != 'Manhattan') & (df['neighbourhood_group'] != 'Brooklyn'), 'neighbourhood'] = 'Mismatch' 
+df.head()
+```
+
+#### Aplicando uma condição IF em uma coluna.
+```bash
+df.loc[df['price'] <= 200, 'price_new'] = 300
+df.loc[df['price'] > 200, 'price_new'] = 500
+df.head()
+```
+
+#### Aplicando uma condição IF caso nulo, incluir 0.
+```bash
+df.loc[df['reviews_per_month'].isnull(), 'reviews_per_month'] = 0
+df.head()
+```
