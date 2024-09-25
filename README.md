@@ -64,13 +64,13 @@ df.isnull().sum()
 ```
 
 ### Condição IF.
-### Aplicando IF com lambda.
+#### Aplicando IF com lambda.
 ```bash
 df['igual_ou_maior_200?'] = df['price'].apply(lambda x: 'Sim' if x <= 200 else 'Não')
 df.head()
 ```
 
-### Aplicando IF com strings.
+#### Aplicando IF com strings.
 ```bash
 df.loc[df['neighbourhood_group'] == 'Manhattan', 'neighbourhood'] = 'Match'  
 df.loc[df['neighbourhood_group'] != 'Manhattan', 'neighbourhood'] = 'Mismatch'
