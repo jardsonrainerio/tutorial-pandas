@@ -2,7 +2,7 @@
 
 Este tutorial contém exemplos práticos de como utilizar o Pandas para manipulação de dados com Python.
 
-## Instalção
+## Instalação
 
 Para instalar o pandas, use o pip:
 
