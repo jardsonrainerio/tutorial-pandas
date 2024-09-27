@@ -102,3 +102,21 @@ df.head()
 df.loc[df['reviews_per_month'].isnull(), 'reviews_per_month'] = 0
 df.head()
 ```
+
+#### Ordenar dataframe em ordem crescente.
+```bash
+df.sort_values(by=['price'], inplace=True)
+df.head()
+```
+
+#### Em ordem decrescente.
+```bash
+df.sort_values(by=['price'], inplace=True, ascending=False)
+df.head()
+```
+
+#### Ordernar múltiplas colunas.
+```bash
+df.sort_values(by=['price', 'availability_365'], inplace=True)
+df.head()
+```
