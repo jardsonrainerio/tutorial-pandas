@@ -126,3 +126,15 @@ df.head()
 df['reviews_per_month'] = df['reviews_per_month'].replace(0, np.nan).fillna(0)
 df.head()
 ```
+
+#### Agrupar os dados pelo neighbourhood_group.
+```bash
+df_counts = df.groupby('neighbourhood_group').size().reset_index(name='count')
+df_counts.head()
+```
+
+#### Agrupar os dados pelo neighbourhood_group e adicionar o método shift(1) deslocandoos os valores da coluna number_of_reviews, ou seja, para cada linha, o valor da nova coluna number_of_reviews_anterior será igual ao valor da coluna number_of_reviews da linha anterior
+```bash
+df['number_of_reviews_anterior'] = df.groupby(['neighbourhood_group'])['number_of_reviews'].shift(1)
+df.head()
+```
