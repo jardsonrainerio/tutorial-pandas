@@ -120,3 +120,9 @@ df.head()
 df.sort_values(by=['price', 'availability_365'], inplace=True)
 df.head()
 ```
+
+#### Substituir todos os valors NaN na coluna por 0.
+```bash
+df['reviews_per_month'] = df['reviews_per_month'].replace(0, np.nan).fillna(0)
+df.head()
+```
