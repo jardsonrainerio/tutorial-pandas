@@ -138,3 +138,21 @@ df_counts.head()
 df['number_of_reviews_anterior'] = df.groupby(['neighbourhood_group'])['number_of_reviews'].shift(1)
 df.head()
 ```
+
+#### Pivot: Reorganiza os dados em um formato de tabela cruzada, útil para transformar dados longos em tabulares.
+```bash
+pivot_df = df.pivot_table(
+    index='neighbourhood_group',
+    columns='room_type',
+    values='price',
+    aggfunc='max' 
+)
+pivot_df.head()
+```
+
+#### Get_dummies: Cria variáveis indicadoras (binárias) para colunas categóricas, útil na preparação de dados para análise
+```bash
+dummies_df = pd.get_dummies(df, columns=['room_type'])
+dummies_df.head()
+```
+
